@@ -14,7 +14,7 @@ function Router() {
       <Routes>
         <Route index element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/httpage" element={<HttpSelectPage />} />
+        <Route path="/httpcats" element={<HttpSelectPage />} />
         <Route path="/dogs" element={<RandomDogsPage />} />
       </Routes>
     </BrowserRouter>

@@ -1,14 +1,11 @@
 import React from "react"
-import { Link } from "react-router-dom"
+
+import Navbar from "../../molecules/Navbar"
 
 function Header() {
   return (
-    <header>
-      <nav>
-        <Link to="/httpage">cats</Link>
-        <Link to="/dogs">dogs</Link>
-        <Link to="/">dash</Link>
-      </nav>
+    <header className="w-screen h-[70px] bg-semi-white fixed drop-shadow-lg">
+      <Navbar />
     </header>
   )
 }
