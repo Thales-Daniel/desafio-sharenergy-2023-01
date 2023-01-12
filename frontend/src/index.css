@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+  .rounded-image {
+    @apply flex w-32 h-32 justify-center items-center p-1 bg-white rounded-full border-zinc-200 border-2;
+  }
   .link-navbar {
     @apply p-4 text-xl flex gap-2 items-center;
   }

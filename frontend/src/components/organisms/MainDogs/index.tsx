@@ -1,5 +1,5 @@
 import React from "react"
-import { DogoTypes } from "../../../shared/types/mainPropsType"
+import { DogoTypes } from "../../../shared/types/PagePropsTypes/mainPropsType"
 
 function MainDogs({ data, mutate }: DogoTypes) {
   return (

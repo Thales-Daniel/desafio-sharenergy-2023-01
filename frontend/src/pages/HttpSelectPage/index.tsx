@@ -13,6 +13,19 @@ function HttpSelectPage() {
   //   refetchOnWindowFocus: false,
   // })
 
+  // "https://http.cat/200.jpg"
+
+  const fetchApiText = async () => {
+    const objResp = await fetch("https://http.cat/200.", { mode: "no-cors" })
+    if (!objResp.ok) return { error: true }
+    const resp = await objResp.text()
+    return JSON.parse(resp)
+  }
+
+  useEffect(() => {
+    fetchApiText()
+  }, [fetchApiText])
+
   return <div className="div-container">select your code</div>
 }
 
