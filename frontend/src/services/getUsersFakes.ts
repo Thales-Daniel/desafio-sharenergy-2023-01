@@ -1,9 +1,9 @@
 import axios from "axios"
 
-const getDogs = async (code: string) => {
+const getDogs = async () => {
   try {
     const { data }: { data: { url: string; fileSizeBytes: number } } =
-      await axios.get(`https://http.cat/${code}`)
+      await axios.get(`https://random.dog/woof.json`)
 
     return data
   } catch (err: any) {

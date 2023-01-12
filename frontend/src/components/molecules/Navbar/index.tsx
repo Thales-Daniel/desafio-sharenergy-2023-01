@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <div className="flex px-4 justify-between items-center w-full h-full">
       <nav className="flex items-center">
-        <Link className="link-navbar" to="/">
+        <Link className="link-navbar" to="/dashboard">
           <AiTwotoneHome />
           Home
         </Link>

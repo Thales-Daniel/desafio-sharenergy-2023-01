@@ -27,7 +27,7 @@ function RandomDogsPage() {
   }, [data, isError])
 
   return (
-    <div className="h-screen div-container">
+    <div className="div-container">
       <MainDogs data={data} mutate={mutate} />
     </div>
   )
