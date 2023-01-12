@@ -1,23 +1,34 @@
-import React, { useState } from "react"
-import { useQuery } from "@tanstack/react-query"
+import React, { useEffect } from "react"
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 
 import getDogs from "../../services/getDogs"
+import MainDogs from "../../components/organisms/MainDogs"
 
 function RandomDogsPage() {
-  const [refresh, setRefres] = useState(false)
-  const { data, isLoading } = useQuery({
-    queryKey: ["todos"],
+  const { data } = useQuery({
+    queryKey: ["dogs"],
     queryFn: getDogs,
+    refetchInterval: false,
+    refetchOnWindowFocus: false,
   })
 
-  if (isLoading) return <div>Loading...</div>
+  const queryClient = useQueryClient()
+
+  const { mutate, isError } = useMutation({
+    mutationFn: getDogs,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["dogs"] })
+    },
+  })
+
+  useEffect(() => {
+    if (data?.url.endsWith("mp4") || data?.url.endsWith("webm")) mutate()
+    if (isError) mutate()
+  }, [data, isError])
 
   return (
-    <div>
-      <img src={data.url} alt="dogo something" />
-      <button type="button" onClick={() => setRefres(!refresh)}>
-        refresh
-      </button>
+    <div className="h-screen div-container">
+      <MainDogs data={data} mutate={mutate} />
     </div>
   )
 }

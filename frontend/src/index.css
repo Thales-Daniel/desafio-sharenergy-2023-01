@@ -6,4 +6,7 @@
   .link-navbar {
     @apply p-4 text-xl flex gap-2 items-center;
   }
+  .div-container {
+    @apply pt-[100px];
+  }
 }
