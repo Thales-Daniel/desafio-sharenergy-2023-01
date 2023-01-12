@@ -4,7 +4,7 @@ import { PaginationTypes } from "../../../shared/types/PagePropsTypes/Pagination
 
 function Pagination({ users }: PaginationTypes) {
   console.log(users)
-  return <div>teste</div>
+  return <div>pagination</div>
 }
 
 export default Pagination

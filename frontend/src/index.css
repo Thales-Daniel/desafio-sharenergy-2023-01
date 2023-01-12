@@ -12,4 +12,8 @@
   .div-container {
     @apply pt-[100px] h-screen;
   }
+
+  .fake-user-card {
+    @apply h-1/4 w-[550px] bg-semi-white flex p-3 items-center rounded-2xl m-auto border-2 border-border-gray drop-shadow-lg;
+  }
 }

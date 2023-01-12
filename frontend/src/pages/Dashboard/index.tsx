@@ -13,9 +13,10 @@ function Dashboard() {
   })
 
   return (
-    <div className="div-container">
-      foto do usuário, nome completo, email, username e idade.
-      <FakeUsersCard user={data?.results[0]} />
+    <div className="div-container flex flex-col gap-4 min-h-screen">
+      {data?.results.map((user) => (
+        <FakeUsersCard user={user} />
+      ))}
       <Pagination users={data} />
     </div>
   )
