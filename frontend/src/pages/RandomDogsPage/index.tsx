@@ -5,7 +5,7 @@ import getDogs from "../../services/getDogs"
 import MainDogs from "../../components/organisms/MainDogs"
 
 function RandomDogsPage() {
-  const { data } = useQuery({
+  const { data, isFetching } = useQuery({
     queryKey: ["dogs"],
     queryFn: getDogs,
     refetchInterval: false,
@@ -14,21 +14,23 @@ function RandomDogsPage() {
 
   const queryClient = useQueryClient()
 
-  const { mutate, isError } = useMutation({
+  const { mutate } = useMutation({
     mutationFn: getDogs,
     onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["dogs"] })
+    },
+    onError: () => {
       queryClient.invalidateQueries({ queryKey: ["dogs"] })
     },
   })
 
   useEffect(() => {
     if (data?.url.endsWith("mp4") || data?.url.endsWith("webm")) mutate()
-    if (isError) mutate()
-  }, [data, isError])
+  }, [data])
 
   return (
     <div className="div-container">
-      <MainDogs data={data} mutate={mutate} />
+      <MainDogs data={data} isFetching={isFetching} mutate={mutate} />
     </div>
   )
 }

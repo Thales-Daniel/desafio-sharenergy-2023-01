@@ -13,6 +13,8 @@ function Router() {
       <Header />
       <Routes>
         <Route index element={<Login />} />
+      </Routes>
+      <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/httpcats" element={<HttpSelectPage />} />
         <Route path="/dogs" element={<RandomDogsPage />} />
