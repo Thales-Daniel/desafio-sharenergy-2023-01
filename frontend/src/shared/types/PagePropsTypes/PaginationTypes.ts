@@ -1,5 +1,5 @@
-import { FakeUsersDataTypes } from "../usersFakeTypes"
-
 export type PaginationTypes = {
-  users?: { results: FakeUsersDataTypes[] }
+  limit: number
+  offset: number
+  total: number
 }

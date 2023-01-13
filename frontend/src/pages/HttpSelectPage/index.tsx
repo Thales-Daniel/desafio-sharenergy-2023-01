@@ -1,32 +1,34 @@
-import React, { useEffect } from "react"
-// import { useQuery } from "@tanstack/react-query"
+import React, { useState } from "react"
 
-// import getCats from "../../services/getCats"
+import OptionSelectHttp from "../../components/atoms/OptionSelectHttp"
+import arrayOfHttp from "../../shared/utils/arrayOfHttp"
 
 function HttpSelectPage() {
-  // const [code, setCode] = useState("200")
+  const url = "https://http.cat/"
+  const [url2, setUrl2] = useState("")
 
-  // const { data } = useQuery({
-  //   queryKey: ["cats"],
-  //   queryFn: () => getCats(code),
-  //   refetchInterval: false,
-  //   refetchOnWindowFocus: false,
-  // })
-
-  // "https://http.cat/200.jpg"
-
-  const fetchApiText = async () => {
-    const objResp = await fetch("https://http.cat/200.", { mode: "no-cors" })
-    if (!objResp.ok) return { error: true }
-    const resp = await objResp.text()
-    return JSON.parse(resp)
-  }
-
-  useEffect(() => {
-    fetchApiText()
-  }, [fetchApiText])
-
-  return <div className="div-container">select your code</div>
+  return (
+    <div className="div-container flex items-center justify-center w-full">
+      <main className="flex flex-col w-[60%] gap-10 items-center justify-center">
+        <select
+          className="w-40 text-center h-8 text-xl rounded-lg"
+          onClick={(event) => {
+            const target = event.target as HTMLSelectElement
+            setUrl2(`${url}${target.value}`)
+          }}
+        >
+          {arrayOfHttp.map((http) => (
+            <OptionSelectHttp value={http} />
+          ))}
+        </select>
+        {url2 ? (
+          <img className="rounded-xl" src={url2} alt="cat code" />
+        ) : (
+          <img src={`${url}${100}`} alt="cat code" />
+        )}
+      </main>
+    </div>
+  )
 }
 
 export default HttpSelectPage

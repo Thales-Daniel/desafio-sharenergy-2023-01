@@ -13,11 +13,13 @@ function Dashboard() {
   })
 
   return (
-    <div className="div-container flex flex-col gap-4 min-h-screen">
-      {data?.results.map((user) => (
-        <FakeUsersCard user={user} />
-      ))}
-      <Pagination users={data} />
+    <div className="pt-[100px] min-h-screen flex justify-center">
+      <main className="grid gap-y-5 gap-x-14 grid-cols-2 justify-center xl:flex xl:flex-col">
+        {data?.results.map((user) => (
+          <FakeUsersCard user={user} />
+        ))}
+        <Pagination />
+      </main>
     </div>
   )
 }
