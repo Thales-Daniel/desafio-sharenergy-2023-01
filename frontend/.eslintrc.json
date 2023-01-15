@@ -14,6 +14,14 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
     "import/extensions": "off",
     "import/no-unresolved": "off",
     "react/jsx-filename-extension": [

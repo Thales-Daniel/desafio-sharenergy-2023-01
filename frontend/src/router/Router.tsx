@@ -10,10 +10,10 @@ import RandomDogsPage from "../pages/RandomDogsPage"
 function Router() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
         <Route index element={<Login />} />
       </Routes>
+      <Header />
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/httpcats" element={<HttpSelectPage />} />

@@ -16,4 +16,8 @@
   .fake-user-card {
     @apply w-[550px] h-48 bg-semi-white flex p-3 items-center rounded-2xl m-auto border-2 border-border-gray drop-shadow-lg z-0;
   }
+
+  .container-with-image {
+    @apply w-screen h-[calc(100%-8.75rem)] flex flex-col items-center gap-5;
+  }
 }
