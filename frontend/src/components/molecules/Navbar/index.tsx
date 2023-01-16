@@ -22,7 +22,9 @@ function Navbar() {
           Dogs
         </Link>
       </nav>
-      <SlLogout className="text-[20px] mr-2" />
+      <Link className="link-navbar" to="/">
+        <SlLogout className="text-[20px] mr-2" />
+      </Link>
     </div>
   )
 }

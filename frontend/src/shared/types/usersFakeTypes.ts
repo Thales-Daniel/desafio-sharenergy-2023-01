@@ -15,6 +15,7 @@ export type FakeUsersDataTypes = {
   }
   picture: {
     medium: string
+    large: string
   }
 }
 

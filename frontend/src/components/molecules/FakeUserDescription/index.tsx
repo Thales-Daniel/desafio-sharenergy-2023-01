@@ -10,7 +10,7 @@ import FakeUserRow from "../../atoms/FakeUserRow"
 function FakeUserDescription({ user }: FakeUsersCardTypes) {
   return (
     <div className="flex flex-col w-full h-full items-center justify-start gap-4">
-      <p className="text-3xl text-center">{`${user?.name.first} ${user?.name.last}`}</p>
+      <p className="text-3xl sm:text-base text-center">{`${user?.name.first} ${user?.name.last}`}</p>
       <div className="flex flex-col gap-2">
         <FakeUserRow info={user?.login.username}>
           <FaUserAlt className="text-2xl" />

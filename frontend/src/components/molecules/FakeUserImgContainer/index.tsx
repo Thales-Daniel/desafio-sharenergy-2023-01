@@ -8,7 +8,7 @@ function FakeUserImgContainer({ user }: FakeUsersCardTypes) {
       <div className="rounded-image ">
         <img
           className="rounded-full w-full h-full"
-          src={user?.picture.medium}
+          src={user?.picture.large}
           alt="user"
         />
       </div>

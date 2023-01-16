@@ -10,10 +10,11 @@ module.exports = {
         "light-yellow": "#D6DE28",
         "strong-blue": "#161C2D",
         "semi-white": "#F8F8F8",
-        "border-gray": "#E2E2E2"
+        "border-gray": "#E2E2E2",
+        "black-not-strong": "#343338",
       },
       screens: {
-        'sm': {'min': '640px', 'max': '767px'},
+        'sm': {'max': '767px'},
         // => @media (min-width: 640px and max-width: 767px) { ... }
   
         'md': {'min': '768px', 'max': '1023px'},

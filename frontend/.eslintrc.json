@@ -22,11 +22,13 @@
         "argsIgnorePattern": "^_"
       }
     ],
+    "consistent-return": "off",
     "import/extensions": "off",
     "import/no-unresolved": "off",
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", "tsx", "ts"] }
-    ]
+    ],
+    "array-callback-return": "off"
   }
 }

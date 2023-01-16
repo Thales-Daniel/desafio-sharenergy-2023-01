@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer components {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   .rounded-image {
     @apply flex w-32 h-32 justify-center items-center p-1 bg-white rounded-full border-zinc-200 border-2;
   }
@@ -14,10 +20,14 @@
   }
 
   .fake-user-card {
-    @apply w-[550px] h-48 bg-semi-white flex p-3 items-center rounded-2xl m-auto border-2 border-border-gray drop-shadow-lg z-0;
+    @apply w-[550px] sm:w-full h-48 bg-semi-white flex p-3 items-center rounded-2xl m-auto border-2 border-border-gray drop-shadow-lg z-0;
   }
 
   .container-with-image {
     @apply w-screen h-[calc(100%-8.75rem)] flex flex-col items-center gap-5;
+  }
+
+  .input-login {
+    @apply bg-semi-white border-border-gray border-2 rounded-md px-[28px] py-1 outline-0 w-full relative;
   }
 }
