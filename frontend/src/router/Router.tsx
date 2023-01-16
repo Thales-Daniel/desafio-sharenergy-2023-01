@@ -10,12 +10,35 @@ import RandomDogsPage from "../pages/RandomDogsPage"
 function Router() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
         <Route index element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/httpcats" element={<HttpSelectPage />} />
-        <Route path="/dogs" element={<RandomDogsPage />} />
+        <Route
+          path="/dashboard"
+          element={
+            <>
+              <Header />
+              <Dashboard />
+            </>
+          }
+        />
+        <Route
+          path="/httpcats"
+          element={
+            <>
+              <Header />
+              <HttpSelectPage />
+            </>
+          }
+        />
+        <Route
+          path="/dogs"
+          element={
+            <>
+              <Header />
+              <RandomDogsPage />
+            </>
+          }
+        />
       </Routes>
     </BrowserRouter>
   )
