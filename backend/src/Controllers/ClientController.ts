@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from "express"
 import IClient from "../Interfaces/IClient"
-import IUser from "../Interfaces/IUser"
 import ClientService from "../Services/ClientService"
 
 class ClientController {
