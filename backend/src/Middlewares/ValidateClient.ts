@@ -1,14 +1,6 @@
 import { Response, Request, NextFunction } from "express"
-import { verify } from "jsonwebtoken"
 
 import ErrorApp from "./ErrorApp"
-
-type JwtPayload = {
-  data: {
-    password: string
-    username: string
-  }
-}
 
 class ValidateClient {
   private req: Request
@@ -24,11 +16,11 @@ class ValidateClient {
   public validateClient() {
     try {
       const { email, name, address, cpf, telephone } = this.req.body
-      if (!email || !name || !address || !cpf || telephone)
-        throw new ErrorApp("Check all fields and try again", 403)
+      if (!email || !name || !address || !cpf || !telephone)
+        throw new ErrorApp("Check all fields and try again", 400)
       return this.next()
     } catch (err) {
-      throw new ErrorApp("Invalid Client", 400)
+      this.next(err)
     }
   }
 }

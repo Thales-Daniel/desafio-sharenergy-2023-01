@@ -1,7 +1,12 @@
 
-use('mongodbVSCodePlaygroundDB');
 
 use("db")
 
-db.users.insertOne({username: "desafiosharenergy", password: "sh@r3n3rgy"})
+db.clients.insertOne({
+  name: "desafiosharenergy",
+  email: "sharenergy@email.com",
+  address: "são paulo",
+  cpf: "11122233344",
+  telephone: "119961122",
+  })
 

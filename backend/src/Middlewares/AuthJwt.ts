@@ -21,6 +21,7 @@ class AuthJwt {
     this.res = res
     this.next = next
   }
+
   public validateJwt() {
     try {
       const token = this.req.headers.authorization
@@ -34,7 +35,7 @@ class AuthJwt {
 
       return this.next()
     } catch (err) {
-      throw new ErrorApp("Invalid Token", 401)
+      this.next(err)
     }
   }
 }

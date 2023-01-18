@@ -1,5 +1,5 @@
 interface IClient {
-  id?: string
+  _id?: string
   name: string
   email: string
   address: string

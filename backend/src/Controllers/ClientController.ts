@@ -27,7 +27,47 @@ class ClientController {
 
     try {
       const createClient = await this.service.create(client)
-      return this.res.status(200).json(createClient)
+      return this.res.status(201).json(createClient)
+    } catch (error) {
+      this.next(error)
+    }
+  }
+
+  public async update() {
+    const { name, email, address, telephone, cpf } = this.req.body
+    const { id } = this.req.params
+
+    const client: IClient = {
+      name: name,
+      email: email,
+      address: address,
+      telephone: telephone,
+      cpf: cpf,
+    }
+
+    try {
+      const updateClient = await this.service.update(id, client)
+      return this.res.status(202).json(updateClient)
+    } catch (error) {
+      this.next(error)
+    }
+  }
+
+  public async delete() {
+    const { id } = this.req.params
+
+    try {
+      const updateClient = await this.service.delete(id)
+      return this.res.status(204).json(updateClient)
+    } catch (error) {
+      this.next(error)
+    }
+  }
+
+  public async find() {
+    try {
+      const getClients = await this.service.findAll()
+      return this.res.status(200).json(getClients)
     } catch (error) {
       this.next(error)
     }

@@ -1,8 +1,7 @@
 import jwt from "jsonwebtoken"
-import fileReader from "./fileReader"
 
 function jwtSign(data: unknown) {
-  const secret = fileReader("jwt.evaluation.key")
+  const secret = process.env.JWT_SECRET || ""
   const token = jwt.sign({ data }, secret, {
     expiresIn: "24h",
   })

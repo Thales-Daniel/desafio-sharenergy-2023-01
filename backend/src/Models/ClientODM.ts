@@ -32,6 +32,7 @@ class ClientODM {
   }
 
   public async delete(id: string) {
+    if (!isValidObjectId(id)) throw Error("Invalid id")
     return this.model.deleteOne({ id: id })
   }
 
@@ -39,7 +40,7 @@ class ClientODM {
     id: string,
     obj: Partial<IClient>
   ): Promise<IClient | null> {
-    if (!isValidObjectId(id)) throw Error("Invalid Mongo id")
+    if (!isValidObjectId(id)) throw Error("Invalid id")
 
     return this.model.findByIdAndUpdate(
       { _id: id },
