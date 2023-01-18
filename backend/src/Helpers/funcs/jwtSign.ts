@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken"
-import { fileReader } from "./fileReader"
+import fileReader from "./fileReader"
 
 function jwtSign(data: unknown) {
   const secret = fileReader("jwt.evaluation.key")
