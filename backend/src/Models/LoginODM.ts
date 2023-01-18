@@ -13,12 +13,9 @@ class LoginODM {
     this.model = models.User || model("User", this.schema)
   }
 
-  public async find(user: IUser): Promise<IUser | null> {
-    if (!user.username || !user.password)
-      throw Error("Username and Password required")
-
+  public async findByUsername(username: string): Promise<IUser | null> {
     return this.model.findOne({
-      user,
+      username,
     })
   }
 }

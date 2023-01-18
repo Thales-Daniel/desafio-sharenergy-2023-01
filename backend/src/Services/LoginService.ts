@@ -1,17 +1,25 @@
+import jwtSign from "../Helpers/funcs/jwtSign"
+import IServiceUser from "../Interfaces/IServiceUser"
 import IUser from "../Interfaces/IUser"
 import LoginODM from "../Models/LoginODM"
 
 class LoginService {
-  public async login(userObj: IUser): Promise<IUser | null> {
+  public async login(userObj: IUser): Promise<IServiceUser | null> {
     const userOdm = new LoginODM()
 
-    const user = await userOdm.find(userObj)
+    if (!userObj.username || !userObj.password)
+      throw Error("Username and Password required")
 
-    console.log(user)
+    const user = await userOdm.findByUsername(userObj.username)
 
-    if (!user) throw Error("Username and Password required")
+    if (!user) throw Error("User not found!")
 
-    return user
+    if (userObj.password !== user.password)
+      throw new Error("Incorrect password")
+
+    const token = jwtSign(userObj)
+
+    return { jwtToken: token }
   }
 }
 

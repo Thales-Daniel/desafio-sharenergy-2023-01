@@ -16,8 +16,6 @@ class LoginController {
   }
 
   public async login() {
-    console.log(this.req.body)
-
     const user: IUser = {
       username: this.req.body.username,
       password: this.req.body.password,
@@ -25,7 +23,7 @@ class LoginController {
 
     try {
       const loginUser = await this.service.login(user)
-      return this.res.status(201).json(loginUser)
+      return this.res.status(200).json(loginUser)
     } catch (error) {
       this.next(error)
     }
