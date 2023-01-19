@@ -1,5 +1,6 @@
 import React from "react"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
+import RequireAuth from "../components/atoms/RequireAuth"
 import Header from "../components/organisms/Header"
 
 import Dashboard from "../pages/Dashboard"
@@ -9,38 +10,36 @@ import RandomDogsPage from "../pages/RandomDogsPage"
 
 function Router() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<Login />} />
-        <Route
-          path="/dashboard"
-          element={
-            <>
-              <Header />
-              <Dashboard />
-            </>
-          }
-        />
-        <Route
-          path="/httpcats"
-          element={
-            <>
-              <Header />
-              <HttpSelectPage />
-            </>
-          }
-        />
-        <Route
-          path="/dogs"
-          element={
-            <>
-              <Header />
-              <RandomDogsPage />
-            </>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route index element={<Login />} />
+      <Route
+        path="/dashboard"
+        element={
+          <RequireAuth>
+            <Header />
+            <Dashboard />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/httpcats"
+        element={
+          <RequireAuth>
+            <Header />
+            <HttpSelectPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/dogs"
+        element={
+          <RequireAuth>
+            <Header />
+            <RandomDogsPage />
+          </RequireAuth>
+        }
+      />
+    </Routes>
   )
 }
 export default Router

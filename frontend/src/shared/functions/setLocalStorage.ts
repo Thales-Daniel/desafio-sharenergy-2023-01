@@ -1,6 +1,5 @@
-const setLocalStorage = (key: string, item: unknown) => {
-  const itemJson = JSON.stringify(item)
-  localStorage.setItem(key, itemJson)
+const setLocalStorage = (key: string, item: any) => {
+  localStorage.setItem(key, item)
 }
 
 export default setLocalStorage

@@ -1,13 +1,13 @@
 import React from "react"
+import AuthProvider from "./contexts/AuthProvider"
 
-import { UserProvider } from "./contexts/UserContext"
 import Router from "./router/Router"
 
 function App() {
   return (
-    <UserProvider>
+    <AuthProvider>
       <Router />
-    </UserProvider>
+    </AuthProvider>
   )
 }
 

@@ -1,27 +1,46 @@
 import { useMutation } from "@tanstack/react-query"
-import React, { useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
+import { AuthContext } from "../../../contexts/AuthContext"
 import useApi from "../../../hooks/useApi"
 import setLocalStorage from "../../../shared/functions/setLocalStorage"
-import BodyTypes from "../../../shared/types/bodyTypes"
+import User from "../../../shared/types/userType"
 import ErroComponent from "../../atoms/ErrorComponent"
 import RememberButton from "../../atoms/RememberButton"
 import PasswordField from "../../molecules/PasswordField"
 import UsernameField from "../../molecules/UsernameField"
 
 function FormLogin() {
+  const {
+    errorMessage,
+    setErrorMessage,
+    checked,
+    setChecked,
+    setUserInfor,
+    userInfor,
+  } = useContext(AuthContext)
+
   const [username, setUsername] = useState("")
   const [showPassword, setShowPassword] = useState(false)
   const [password, setPassword] = useState("")
-  const [checked, setChecked] = useState(false)
-  const [errorMessage, setErrorMessage] = useState("")
-
+  const navigate = useNavigate()
   const api = useApi()
 
+  useEffect(() => {
+    if (userInfor.token && userInfor.remember) {
+      navigate("/dashboard")
+    }
+  }, [userInfor])
+
   const { mutate } = useMutation({
-    mutationFn: (body: BodyTypes) => api.signin(body),
+    mutationKey: ["login"],
+    mutationFn: (body: User) => api.signin(body),
     onSuccess: (data) => {
-      setLocalStorage("user", { jwt: data.jwt, remember: checked })
+      setLocalStorage("token", data.jwtToken)
+      setLocalStorage("remember", checked)
+      setUserInfor({ token: data.jwtToken, remember: checked })
+      navigate("/dashboard")
     },
     onError: (err: Error) => {
       setErrorMessage(err.toString())
