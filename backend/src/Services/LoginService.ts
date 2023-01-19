@@ -5,7 +5,6 @@ import LoginODM from "../Models/LoginODM"
 
 class LoginService {
   public async login(userObj: IUser): Promise<IServiceUser | null> {
-    console.log(userObj)
     const userOdm = new LoginODM()
 
     if (!userObj.username || !userObj.password)
