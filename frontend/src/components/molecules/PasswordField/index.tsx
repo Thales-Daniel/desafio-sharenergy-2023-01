@@ -22,7 +22,7 @@ function PasswordField({
       />
       <button
         type="button"
-        className="absolute bottom-[12px] left-2"
+        className="absolute bottom-[4px] left-2"
         onClick={() => setShowPassword(!showPassword)}
       >
         {!showPassword ? <GiPadlock /> : <GiPadlockOpen />}

@@ -28,6 +28,6 @@
   }
 
   .input-login {
-    @apply bg-semi-white border-border-gray border-2 rounded-md px-[28px] py-1 outline-0 w-full relative;
+    @apply bg-semi-white border-black-not-strong border-2 rounded-md px-[28px] py-1 outline-0 w-full relative;
   }
 }
