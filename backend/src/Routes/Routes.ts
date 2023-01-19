@@ -11,6 +11,12 @@ routes.post("/login", (req, res, next) =>
 )
 
 routes.post(
+  "/login/validateToken",
+  (req, res, next) => new AuthJwt(req, res, next).validateJwt(),
+  (req, res, next) => new LoginController(req, res, next).validateToken()
+)
+
+routes.post(
   "/client/create",
   (req, res, next) => new AuthJwt(req, res, next).validateJwt(),
   (req, res, next) => new ValidateClient(req, res, next).validateClient(),

@@ -1,5 +1,5 @@
 import jwtSign from "../Helpers/funcs/jwtSign"
-import IServiceUser from "../Interfaces/IServiceUser"
+import { IServiceUser, IServiceValidate } from "../Interfaces/IServiceUser"
 import IUser from "../Interfaces/IUser"
 import LoginODM from "../Models/LoginODM"
 
@@ -21,6 +21,10 @@ class LoginService {
     const token = jwtSign(userObj)
 
     return { jwtToken: token }
+  }
+
+  public validateToken(data: IServiceValidate): IServiceValidate | null {
+    return { username: data.username, jwtToken: data.jwtToken }
   }
 }
 

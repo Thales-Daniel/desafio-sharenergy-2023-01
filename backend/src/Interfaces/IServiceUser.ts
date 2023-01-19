@@ -1,5 +1,8 @@
-interface IServiceUser {
+export interface IServiceUser {
   jwtToken: string
 }
 
-export default IServiceUser
+export interface IServiceValidate {
+  username: string
+  jwtToken: string
+}

@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from "express"
+import { IServiceValidate } from "../Interfaces/IServiceUser"
 import IUser from "../Interfaces/IUser"
 import LoginService from "../Services/LoginService"
 
@@ -24,6 +25,22 @@ class LoginController {
     try {
       const loginUser = await this.service.login(user)
       return this.res.status(200).json(loginUser)
+    } catch (error) {
+      this.next(error)
+    }
+  }
+
+  public async validateToken() {
+    const username = this.res.locals.username
+    const jwtToken = this.res.locals.token
+    const user: IServiceValidate = {
+      username,
+      jwtToken,
+    }
+
+    try {
+      const tokenAndUsername = await this.service.validateToken(user)
+      return this.res.status(200).json(tokenAndUsername)
     } catch (error) {
       this.next(error)
     }

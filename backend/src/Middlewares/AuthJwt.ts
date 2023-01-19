@@ -1,5 +1,6 @@
 import { Response, Request, NextFunction } from "express"
 import { verify } from "jsonwebtoken"
+import "dotenv/config"
 
 import ErrorApp from "./ErrorApp"
 
@@ -7,6 +8,7 @@ type JwtPayload = {
   data: {
     password: string
     username: string
+    token: string
   }
 }
 
@@ -30,8 +32,11 @@ class AuthJwt {
 
       const { data } = verify(token, this.secret) as JwtPayload
 
+      console.log(this.secret)
+
       this.res.locals.username = data.username.toString()
       this.res.locals.password = data.password.toString()
+      this.res.locals.token = token
 
       return this.next()
     } catch (err) {

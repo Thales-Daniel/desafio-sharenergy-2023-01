@@ -4,6 +4,7 @@ function jwtSign(data: unknown) {
   const secret = process.env.JWT_SECRET || ""
   const token = jwt.sign({ data }, secret, {
     expiresIn: "24h",
+    algorithm: "HS256",
   })
 
   return token
