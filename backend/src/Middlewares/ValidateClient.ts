@@ -16,6 +16,7 @@ class ValidateClient {
   public validateClient() {
     try {
       const { email, name, address, cpf, telephone } = this.req.body
+      console.log(this.req.body)
       if (!email || !name || !address || !cpf || !telephone)
         throw new ErrorApp("Check all fields and try again", 400)
       return this.next()
