@@ -24,8 +24,7 @@
     "prettier": "^2.8.2"
   },
   "scripts": {
-    "start": "ts-node-dev src/server.ts",
-    "seeds": "ts-node-dev src/Models/seeds/seeds.ts"
+    "start": "ts-node-dev src/server.ts"
   },
   "keywords": [],
   "author": "",

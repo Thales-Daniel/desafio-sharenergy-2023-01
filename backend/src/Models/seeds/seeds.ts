@@ -5,8 +5,10 @@ const loginConnect: any = new LoginODM()
 const seedDB = async () => {
   const username = "desafiosharenergy"
   const password = "sh@r3n3rgy"
-
-  await loginConnect.insertOne(username, password)
+  const find = await loginConnect.findByUsername(username)
+  if (!find) {
+    await loginConnect.insertOne(username, password)
+  }
 }
 
-seedDB()
+export default seedDB

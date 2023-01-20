@@ -25,6 +25,12 @@ class LoginService {
   public validateToken(data: IServiceValidate): IServiceValidate | null {
     return { username: data.username, jwtToken: data.jwtToken }
   }
+
+  // public async populateBank(username: string, password: string): Promise<any> {
+  //   const userOdm = new LoginODM()
+  //   const user = await userOdm.insertOne(username, password)
+  //   return { username, password }
+  // }
 }
 
 export default LoginService
