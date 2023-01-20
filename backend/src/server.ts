@@ -5,7 +5,7 @@ import seedDB from "./Models/seeds/seeds"
 
 const PORT = process.env.PORT || 3001
 connectToDatabase()
-  .then((teste) => {
+  .then(() => {
     app.listen(PORT, () => console.log(`Running server on port: ${PORT}`))
     seedDB()
   })
