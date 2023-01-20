@@ -1,10 +1,10 @@
 import React from "react"
 
-import { FakeUsersCardTypes } from "../../../shared/types/PagePropsTypes/fakeUsersCardTypes"
+import FakeUsersCardType from "../../../shared/types/PagePropsTypes/fakeUsersCardTypes"
 import FakeUserDescription from "../FakeUserDescription"
 import FakeUserImgContainer from "../FakeUserImgContainer"
 
-function FakeUsersCard({ user }: FakeUsersCardTypes) {
+function FakeUsersCard({ user }: FakeUsersCardType) {
   return (
     <div className="fake-user-card">
       <FakeUserImgContainer user={user} />

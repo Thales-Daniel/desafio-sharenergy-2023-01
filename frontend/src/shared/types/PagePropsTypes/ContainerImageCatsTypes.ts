@@ -1,3 +1,5 @@
-export type ContainerImageCatsTypes = {
+type ContainerImageCatsType = {
   code: string
 }
+
+export default ContainerImageCatsType

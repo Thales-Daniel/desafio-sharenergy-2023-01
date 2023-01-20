@@ -1,12 +1,12 @@
 import React from "react"
 
-import { ContainerButtonCatsTypes } from "../../../shared/types/PagePropsTypes/ContainerButtonCatsTypes"
+import ContainerButtonCatsType from "../../../shared/types/PagePropsTypes/ContainerButtonCatsTypes"
 
 function ContainerButtonCats({
   inputValue,
   setInputValue,
   setCode,
-}: ContainerButtonCatsTypes) {
+}: ContainerButtonCatsType) {
   return (
     <div className="flex gap-4">
       <input

@@ -1,8 +1,8 @@
 import React from "react"
 
-import { FakeUserRowTypes } from "../../../shared/types/PagePropsTypes/FakeUserRow"
+import FakeUserRowType from "../../../shared/types/PagePropsTypes/FakeUserRow"
 
-function FakeUserRow({ info, children }: FakeUserRowTypes) {
+function FakeUserRow({ info, children }: FakeUserRowType) {
   return (
     <div className="flex gap-2 items-center ">
       <div>{children}</div>

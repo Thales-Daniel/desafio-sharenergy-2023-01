@@ -4,10 +4,10 @@ import { FaUserAlt } from "react-icons/fa"
 import { AiTwotoneMail } from "react-icons/ai"
 import ageIcon from "../../../shared/images/age-icon.png"
 
-import { FakeUsersCardTypes } from "../../../shared/types/PagePropsTypes/fakeUsersCardTypes"
+import FakeUsersCardType from "../../../shared/types/PagePropsTypes/fakeUsersCardTypes"
 import FakeUserRow from "../../atoms/FakeUserRow"
 
-function FakeUserDescription({ user }: FakeUsersCardTypes) {
+function FakeUserDescription({ user }: FakeUsersCardType) {
   return (
     <div className="flex flex-col w-full h-full items-center justify-start gap-4">
       <p className="text-3xl sm:text-base text-center">{`${user?.name.first} ${user?.name.last}`}</p>

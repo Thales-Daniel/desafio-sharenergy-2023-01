@@ -1,6 +1,8 @@
 import React from "react"
 
-export type FakeUserRowTypes = {
+type FakeUserRowType = {
   info?: string | number
   children?: React.ReactNode
 }
+
+export default FakeUserRowType

@@ -1,8 +1,8 @@
 import React from "react"
 
-import ClientFieldTypes from "../../../shared/types/PagePropsTypes/ClientCardFieldTypes"
+import ClientFieldType from "../../../shared/types/PagePropsTypes/ClientCardFieldTypes"
 
-function ClientCardField({ title, value }: ClientFieldTypes) {
+function ClientCardField({ title, value }: ClientFieldType) {
   return (
     <div className="flex items-start justify-center gap-3">
       <strong>{title}:</strong>

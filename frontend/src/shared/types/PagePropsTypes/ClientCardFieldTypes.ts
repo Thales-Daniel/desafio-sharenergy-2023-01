@@ -1,6 +1,6 @@
-type ClientFieldTypes = {
+type ClientFieldType = {
   title: string
   value: string
 }
 
-export default ClientFieldTypes
+export default ClientFieldType

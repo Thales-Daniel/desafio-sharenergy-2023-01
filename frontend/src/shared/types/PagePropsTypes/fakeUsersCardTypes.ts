@@ -1,5 +1,7 @@
 import { FakeUsersDataTypes } from "../usersFakeTypes"
 
-export type FakeUsersCardTypes = {
+export type FakeUsersCardType = {
   user?: FakeUsersDataTypes
 }
+
+export default FakeUsersCardType

@@ -1,9 +1,9 @@
 import React from "react"
 
 import selectCat from "../../../shared/images/select-cat.png"
-import { ContainerImageCatsTypes } from "../../../shared/types/PagePropsTypes/ContainerImageCatsTypes"
+import ContainerImageCatsType from "../../../shared/types/PagePropsTypes/ContainerImageCatsTypes"
 
-function ContainerImageCats({ code }: ContainerImageCatsTypes) {
+function ContainerImageCats({ code }: ContainerImageCatsType) {
   const url = "https://http.cat/"
 
   return (

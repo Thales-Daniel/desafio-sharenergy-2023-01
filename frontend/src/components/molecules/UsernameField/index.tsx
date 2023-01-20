@@ -1,8 +1,8 @@
 import React from "react"
 import { BiUser } from "react-icons/bi"
-import { usernameFieldTypes } from "../../../shared/types/PagePropsTypes/usernameFieldTypes"
+import usernameFieldType from "../../../shared/types/PagePropsTypes/usernameFieldTypes"
 
-function UsernameField({ setUsername, username }: usernameFieldTypes) {
+function UsernameField({ setUsername, username }: usernameFieldType) {
   return (
     <label className="w-4/5 relative" htmlFor="username">
       <p className="text-[22px]">Username</p>

@@ -1,8 +1,8 @@
 import React from "react"
 
-import { FakeUsersCardTypes } from "../../../shared/types/PagePropsTypes/fakeUsersCardTypes"
+import FakeUsersCardType from "../../../shared/types/PagePropsTypes/fakeUsersCardTypes"
 
-function FakeUserImgContainer({ user }: FakeUsersCardTypes) {
+function FakeUserImgContainer({ user }: FakeUsersCardType) {
   return (
     <div className="w-1/3 pr-5 h-full border-r-[0.5px] flex items-center border-border-gray">
       <div className="rounded-image ">

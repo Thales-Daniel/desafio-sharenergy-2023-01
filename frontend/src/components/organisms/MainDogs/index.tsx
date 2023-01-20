@@ -1,9 +1,9 @@
 import React from "react"
 
-import { DogoTypes } from "../../../shared/types/PagePropsTypes/mainPropsType"
+import DogoType from "../../../shared/types/PagePropsTypes/mainPropsType"
 import LoadingDog from "../../atoms/LoadingDog"
 
-function MainDogs({ data, mutate, isFetching }: DogoTypes) {
+function MainDogs({ data, mutate, isFetching }: DogoType) {
   return (
     <main className="container-with-image">
       <button
