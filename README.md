@@ -110,8 +110,6 @@ O front-end do projeto foi desenvolvido em React.js com o gerenciador de estado 
 <br/><br/>
 <br/><br/>
 
-# Executando o projeto
-
 # Desafio Principal
 
 O principal desafio do projeto foi organizar por onde seria iniciado a produção, alem disso, houveram problemas na hora das escolhas de quais tecnologias usar, mas no final deu tudo certo.
