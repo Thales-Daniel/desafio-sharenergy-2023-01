@@ -3,6 +3,7 @@ export type ClientType = {
   telephone: string
   name: string
   email: string
+  cpf: string
 }
 
 export type ClientCardType = {
