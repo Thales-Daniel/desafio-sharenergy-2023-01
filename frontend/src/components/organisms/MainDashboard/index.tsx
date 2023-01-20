@@ -16,12 +16,12 @@ function MainDashboard({ data }: FakeUsersTypes) {
   const width = window.innerWidth > 1200 ? 4 : 2
 
   const pageFiltered = data?.results.filter((user) => {
-    const fullName = `${user.name.last} ${user.name.last}`
+    const fullName = `${user.name.last} ${user.name.last}`.toLowerCase()
     const email = user.email.toLowerCase().includes(search.toLocaleLowerCase())
     const username = user.login.username
       .toLowerCase()
       .includes(search.toLocaleLowerCase())
-    const name = fullName.toLowerCase().includes(search.toLocaleLowerCase())
+    const name = fullName.includes(search.toLocaleLowerCase())
 
     if (email || username || name) return user
   })
@@ -48,7 +48,7 @@ function MainDashboard({ data }: FakeUsersTypes) {
           onChange={({ target }) => setSearch(target.value)}
         />
       </div>
-      <div className="h-2/3 grid gap-y-5 gap-x-14 grid-cols-2 sm:w-full xl:flex xl:flex-col sm:justify-around">
+      <div className="h-2/3 grid gap-y-5 gap-x-14 grid-cols-2  sm:w-full xl:flex xl:flex-col sm:justify-around ">
         {pages?.map((user: any) => (
           <FakeUsersCard user={user} key={user?.login.username} />
         ))}
