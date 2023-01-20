@@ -23,7 +23,7 @@ function ClientsMain() {
   if (isLoading) return <div>loading...</div>
 
   return (
-    <div className="w-3/4 flex flex-col items-center gap-">
+    <div className="w-3/4 flex flex-col items-center gap-10">
       {clients.map((client: ClientType) => (
         <ClientCard client={client} />
       ))}
