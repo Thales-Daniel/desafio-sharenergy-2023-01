@@ -18,6 +18,16 @@ class LoginODM {
       username,
     })
   }
+
+  public async insertOne(
+    username: string,
+    password: string
+  ): Promise<IUser | null> {
+    return this.model.create({
+      username,
+      password,
+    })
+  }
 }
 
 export default LoginODM

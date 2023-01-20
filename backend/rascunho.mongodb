@@ -10,3 +10,8 @@ db.clients.insertOne({
   telephone: "119961122",
   })
 
+
+db.users.insertOne({
+  username: "desafiosharenergy",
+  password: "sh@r3n3rgy"
+})
