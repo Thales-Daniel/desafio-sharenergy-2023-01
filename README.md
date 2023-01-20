@@ -16,16 +16,12 @@ Este Projeto tem como finalidade estruturar uma aplicação web fullstack, cujo 
 
 # Instruções:
 
-Primeiro clone o repositorio para sua máquina local
-
 ```
+- Clone o repositorio na sua maquina local e entre na pasta clonada
 
-```
+- Inicie o mongodb na porta 27017
 
-após isso entre na pasta do repositorio
-
-```
-
+    *Existe um arquivo .env.example para fins didaticos
 ```
 
 Logo em seguida, execute o comando para instalar as dependencias:
