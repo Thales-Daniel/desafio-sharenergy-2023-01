@@ -26,7 +26,10 @@ function ClientModalEdit({
   }
 
   return (
-    <form className="form-modal absolute top-1/5" onSubmit={handleSubmitEdit}>
+    <form
+      className="form-modal absolute top-1/5 lg2:w-full"
+      onSubmit={handleSubmitEdit}
+    >
       <button
         className="self-end "
         type="button"
@@ -34,7 +37,7 @@ function ClientModalEdit({
       >
         <GrClose />
       </button>
-      <div className=" w-full flex flex-col items-center justify-center gap-6 mb-10">
+      <div className=" w-full flex flex-col items-center justify-center gap-6 mb-10 ">
         <LabelModel title="Name" value={name} onChange={setName} length={30} />
         <LabelModel
           title="Email"

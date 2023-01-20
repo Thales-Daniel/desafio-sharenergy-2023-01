@@ -25,7 +25,10 @@ function ClientModal({
   }
 
   return (
-    <form className="form-modal absolute top-1/5" onSubmit={handleSubmit}>
+    <form
+      className="form-modal absolute top-1/5 lg2:w-full"
+      onSubmit={handleSubmit}
+    >
       <button
         className="self-end "
         type="button"
