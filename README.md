@@ -33,7 +33,7 @@ Logo em seguida, execute o comando para instalar as dependencias:
 <strong>OBS: pode demorar um pouco</strong>
 
 ```
-npm install:all
+npm run install:all
 ```
 
 O proximo passo é rodar o comando abaixo para atualizar o banco de dados com a migraçao atual do prisma.
