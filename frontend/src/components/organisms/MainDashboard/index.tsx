@@ -30,6 +30,8 @@ function MainDashboard({ data }: FakeUsersTypes) {
 
   let totalPages = 20
 
+  console.log(pages)
+
   if (pageFiltered) {
     totalPages =
       pageFiltered?.length <= 4 ? 1 : Math.ceil(pageFiltered.length / 4)

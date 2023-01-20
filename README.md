@@ -30,15 +30,13 @@ após isso entre na pasta do repositorio
 
 Logo em seguida, execute o comando para instalar as dependencias:
 
+<strong>OBS: pode demorar um pouco</strong>
+
 ```
 npm install:all
 ```
 
 O proximo passo é rodar o comando abaixo para atualizar o banco de dados com a migraçao atual do prisma.
-
-```
-npm run seeds
-```
 
 E para finalizar, inicie o projeto rodando o comando a baixo:
 
@@ -55,7 +53,9 @@ npm start
 
 Link do video Abaixo:
 
-[Video Explicativo no youtube](https://link-url-here.org)
+<div>
+<a href="https://youtu.be/cZdIJ-aw9ow">https://youtu.be/cZdIJ-aw9ow</a>
+</div>
 
 <br/>
 <br/>

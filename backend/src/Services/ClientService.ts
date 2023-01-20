@@ -15,7 +15,6 @@ class ClientService {
   }
 
   public async update(id: string, clientObj: IClient): Promise<IClient | null> {
-    console.log(clientObj)
     const client = await this.clientOdm.update(id, clientObj)
 
     if (!client) throw new ErrorApp("User not found!", 404)
