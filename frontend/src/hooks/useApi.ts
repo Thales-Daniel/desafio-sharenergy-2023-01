@@ -1,5 +1,5 @@
 import axios from "axios"
-import { ClientType } from "../shared/types/PagePropsTypes/ClientCardTypes"
+import { ClientNoIdType } from "../shared/types/clientType"
 
 import User from "../shared/types/userType"
 
@@ -48,7 +48,7 @@ const useApi = () => ({
     }
   },
 
-  createClient: async (body: ClientType, jwtToken: string) => {
+  createClient: async (body: ClientNoIdType, jwtToken: string) => {
     try {
       const { data } = await api.post(
         "/client/create",
@@ -65,7 +65,7 @@ const useApi = () => ({
     }
   },
 
-  updateClient: async (body: ClientType, id: string, jwtToken: string) => {
+  updateClient: async (id: string, body: ClientNoIdType, jwtToken: string) => {
     try {
       const { data } = await api.put(
         `/client/update/${id}`,
@@ -84,7 +84,7 @@ const useApi = () => ({
 
   deleteClient: async (id: string, jwtToken: string) => {
     try {
-      const { data } = await api.put(`/client/delete/${id}`, {
+      const { data } = await api.delete(`/client/delete/${id}`, {
         headers: {
           authorization: jwtToken,
         },

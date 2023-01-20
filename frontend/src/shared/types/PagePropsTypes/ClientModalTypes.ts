@@ -1,7 +1,10 @@
-import { ClientType } from "./ClientCardTypes"
+import { ClientNoIdType } from "../clientType"
 
 type ClientModalType = {
-  addClient: (_client: ClientType) => void
+  addClient: (_client: ClientNoIdType) => void
+  closeModal: (_showModal: boolean) => void
+  errorMessage: string
+  sucessMessage: boolean
 }
 
 export default ClientModalType

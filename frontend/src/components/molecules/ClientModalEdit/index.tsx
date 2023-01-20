@@ -1,16 +1,17 @@
 import React, { useState } from "react"
 import { GrClose } from "react-icons/gr"
-import ClientModalType from "../../../shared/types/PagePropsTypes/ClientModalTypes"
+import ClientModalEditType from "../../../shared/types/PagePropsTypes/ClientModalEditTypes"
 import ErrorComponent from "../../atoms/ErrorComponent"
 import LabelModel from "../../atoms/LabelModal"
 import SucessComponent from "../../atoms/SucessComponent"
 
-function ClientModal({
-  addClient,
+function ClientModalEdit({
+  editClient,
   closeModal,
   errorMessage,
+  id,
   sucessMessage,
-}: ClientModalType) {
+}: ClientModalEditType) {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [telephone, setTelephone] = useState("")
@@ -19,13 +20,13 @@ function ClientModal({
 
   const body = { name, email, telephone, address, cpf }
 
-  const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
+  const handleSubmitEdit = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault()
-    addClient(body)
+    editClient({ id, body })
   }
 
   return (
-    <form className="form-modal absolute top-1/5" onSubmit={handleSubmit}>
+    <form className="form-modal absolute top-1/5" onSubmit={handleSubmitEdit}>
       <button
         className="self-end "
         type="button"
@@ -61,10 +62,10 @@ function ClientModal({
         className="border text-lg rounded-lg px-4 py-2 border-black-not-strong"
         type="submit"
       >
-        Create
+        Edit
       </button>
     </form>
   )
 }
 
-export default ClientModal
+export default ClientModalEdit

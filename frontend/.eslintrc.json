@@ -29,6 +29,7 @@
       1,
       { "extensions": [".js", ".jsx", "tsx", "ts"] }
     ],
-    "array-callback-return": "off"
+    "array-callback-return": "off",
+    "no-underscore-dangle": "off"
   }
 }

@@ -1,12 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react"
 
 import useApi from "../hooks/useApi"
+import userInforType from "../shared/types/userInforTypes"
 import { AuthContext } from "./AuthContext"
 
 function AuthProvider({ children }: { children: React.ReactNode }) {
   const [checked, setChecked] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
-  const [userInfor, setUserInfor] = useState({} as any)
+  const [userInfor, setUserInfor] = useState({} as userInforType)
   const api = useApi()
 
   useEffect(() => {
@@ -27,7 +28,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signout = () => {
     setChecked(false)
-    setUserInfor({})
+    setUserInfor({ token: "", remember: false })
     localStorage.clear()
   }
 

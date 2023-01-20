@@ -4,7 +4,7 @@ import ClientFieldType from "../../../shared/types/PagePropsTypes/ClientCardFiel
 
 function ClientCardField({ title, value }: ClientFieldType) {
   return (
-    <div className="flex items-start justify-center gap-3">
+    <div className="flex items-start justify-center gap-3 sm:flex-col">
       <strong>{title}:</strong>
       <p>{value}</p>
     </div>
