@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { SlLogout } from "react-icons/sl"
-import { AiTwotoneHome } from "react-icons/ai"
+import { AiTwotoneHome, AiOutlineUsergroupAdd } from "react-icons/ai"
 import { SiDatadog } from "react-icons/si"
 import { GiCat } from "react-icons/gi"
 import { Link } from "react-router-dom"
@@ -27,6 +27,10 @@ function Navbar() {
         <Link className="link-navbar" to="/dogs">
           <SiDatadog />
           Dogs
+        </Link>
+        <Link className="link-navbar" to="/clients">
+          <AiOutlineUsergroupAdd />
+          Clients
         </Link>
       </nav>
       <Link className="link-navbar" onClick={handleLogout} to="/">

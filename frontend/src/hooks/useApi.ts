@@ -33,6 +33,19 @@ const useApi = () => ({
       throw Error(err.response.data.message)
     }
   },
+
+  findAll: async (jwtToken: string) => {
+    try {
+      const { data } = await api.get("/client", {
+        headers: {
+          authorization: jwtToken,
+        },
+      })
+      return data
+    } catch (err: any) {
+      throw Error(err.response.data.message)
+    }
+  },
 })
 
 export default useApi

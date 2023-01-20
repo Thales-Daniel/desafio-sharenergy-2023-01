@@ -2,6 +2,7 @@ import React from "react"
 import { Route, Routes } from "react-router-dom"
 import RequireAuth from "../components/atoms/RequireAuth"
 import Header from "../components/organisms/Header"
+import Clients from "../pages/Clients"
 
 import Dashboard from "../pages/Dashboard"
 import HttpSelectPage from "../pages/HttpSelectPage"
@@ -36,6 +37,15 @@ function Router() {
           <RequireAuth>
             <Header />
             <RandomDogsPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/clients"
+        element={
+          <RequireAuth>
+            <Header />
+            <Clients />
           </RequireAuth>
         }
       />
