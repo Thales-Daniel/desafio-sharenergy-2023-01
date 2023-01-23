@@ -16,7 +16,7 @@ class AuthJwt {
   private req: Request
   private res: Response
   private next: NextFunction
-  private readonly secret = process.env.JWT_SECRET || ""
+  private readonly secret = process.env.JWT_SECRET || "random"
 
   constructor(req: Request, res: Response, next: NextFunction) {
     this.req = req
