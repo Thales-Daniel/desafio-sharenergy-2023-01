@@ -8,8 +8,16 @@ import FakeUsersCard from "../../molecules/FakeUsersCard"
 
 function MainDashboard({ data }: FakeUsersTypes) {
   const [search, setSearch] = useState("")
+  const [inputValue, setInputValue] = useState("")
   const [actualPage, setActualPage] = useState(1)
-  const handleChange = (_event: any, value: number) => {
+
+  const handleSubmit = (event: React.FormEvent<EventTarget>) => {
+    const target = event.target as HTMLFormElement
+    target.preventDefault()
+    setSearch(inputValue)
+  }
+
+  const handleChange = (_event: React.ChangeEvent<unknown>, value: number) => {
     setActualPage(value)
   }
 
@@ -38,18 +46,25 @@ function MainDashboard({ data }: FakeUsersTypes) {
   }
   return (
     <main className="h-full flex flex-col items-center justify-around sm:w-full">
-      <div className="relative">
-        <p className="absolute right-1 top-[4px] h-full">
-          <AiOutlineSearch className="text-[30px]" />
-        </p>
-        <input
-          value={search}
-          placeholder="Username, Name or Email"
-          type="text"
-          className="w-60 py-2 px-2 rounded-md border-black-not-strong border-[1px] outline-none"
-          onChange={({ target }) => setSearch(target.value)}
-        />
-      </div>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="search" className="flex ">
+          <input
+            id="search"
+            name="search"
+            value={inputValue}
+            placeholder="Username, Name or Email"
+            type="text"
+            className="w-60 py-2 px-2 rounded-l border-black-not-strong border-[1px] border-r-0 outline-none"
+            onChange={({ target }) => setInputValue(target.value)}
+          />
+          <button
+            type="submit"
+            className="flex items-center justify-center bg-semi-white rounded-r-md border-[1px] px-2 border-black-not-strong"
+          >
+            <AiOutlineSearch className="text-[30px]" />
+          </button>
+        </label>
+      </form>
       <div className="h-2/3 grid gap-y-5 gap-x-14 grid-cols-2  sm:w-full xl:flex xl:flex-col sm:justify-around ">
         {pages?.map((user: any) => (
           <FakeUsersCard user={user} key={user?.login.username} />
