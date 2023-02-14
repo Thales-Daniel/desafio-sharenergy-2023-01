@@ -32,7 +32,7 @@ function ClientCard({
           </button>
         )}
       </div>
-      <div className="grid grid-cols-3 gap-3 w-full border-black-not-strong border p-4 rounded-xl lg2:flex lg2:flex-col lg2:items-start">
+      <div className="grid grid-cols-3 gap-3 w-full border-black-not-strong border p-4 rounded-xl 2lg:flex 2lg:flex-col 2lg:items-start">
         <div className="client-infor-container">
           <ClientCardField title="Name" value={name} />
           <ClientCardField title="Email" value={email} />

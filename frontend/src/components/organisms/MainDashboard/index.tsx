@@ -12,8 +12,8 @@ function MainDashboard({ data }: FakeUsersTypes) {
   const [actualPage, setActualPage] = useState(1)
 
   const handleSubmit = (event: React.FormEvent<EventTarget>) => {
-    const target = event.target as HTMLFormElement
-    target.preventDefault()
+    event.preventDefault()
+
     setSearch(inputValue)
   }
 
@@ -38,8 +38,6 @@ function MainDashboard({ data }: FakeUsersTypes) {
 
   let totalPages = 20
 
-  console.log(pages)
-
   if (pageFiltered) {
     totalPages =
       pageFiltered?.length <= 4 ? 1 : Math.ceil(pageFiltered.length / 4)
@@ -54,12 +52,12 @@ function MainDashboard({ data }: FakeUsersTypes) {
             value={inputValue}
             placeholder="Username, Name or Email"
             type="text"
-            className="w-60 py-2 px-2 rounded-l border-black-not-strong border-[1px] border-r-0 outline-none"
+            className="bg-semi-white border-border-gray border-r-0 border-2 rounded-l-md p-[5px] outline-0"
             onChange={({ target }) => setInputValue(target.value)}
           />
           <button
             type="submit"
-            className="flex items-center justify-center bg-semi-white rounded-r-md border-[1px] px-2 border-black-not-strong"
+            className="bg-light-blue text-semi-white px-3 rounded-r-md"
           >
             <AiOutlineSearch className="text-[30px]" />
           </button>

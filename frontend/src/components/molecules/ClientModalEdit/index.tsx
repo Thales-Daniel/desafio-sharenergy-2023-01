@@ -27,7 +27,7 @@ function ClientModalEdit({
 
   return (
     <form
-      className="form-modal absolute top-1/5 lg2:w-full"
+      className="form-modal absolute top-1/5 2lg:w-full"
       onSubmit={handleSubmitEdit}
     >
       <button
