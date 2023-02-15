@@ -2,6 +2,7 @@ import { useMutation } from "@tanstack/react-query"
 import React, { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
+import randomLogo from "../../../shared/images/random-logo-recortado.png"
 import { AuthContext } from "../../../contexts/AuthContext"
 import useApi from "../../../hooks/useApi"
 import setLocalStorage from "../../../shared/functions/setLocalStorage"
@@ -59,9 +60,10 @@ function FormLogin() {
     <div className="h-[70%]">
       <form
         onSubmit={(event) => handleSubmit(event)}
-        className="w-[450px] h-full flex flex-col justify-around items-center bg-white  rounded-xl p-4"
+        className="w-[450px] h-full flex flex-col justify-start gap-10 items-center bg-white  rounded-xl p-4"
       >
-        <h1 className="text-5xl">Login</h1>
+        <img className="h-44 rounded-md" src={randomLogo} alt="random logo" />
+
         <UsernameField setUsername={setUsername} username={username} />
         <div className="w-4/5 relative">
           <PasswordField

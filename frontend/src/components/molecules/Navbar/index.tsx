@@ -21,17 +21,17 @@ function Navbar() {
   }
 
   return (
-    <div className="flex bg-light-blue px-4 justify-between items-center w-full h-full">
+    <div className="flex px-4 justify-between items-center h-full">
       <nav className="hidden items-center w-full sm:flex">
         <button
           type="button"
-          className="cursor-pointer text-white text-3xl"
+          className="cursor-pointer text-semi-white text-3xl"
           onClick={() => setClose(!close)}
         >
           {close === false ? <GiHamburgerMenu /> : <AiOutlineClose />}
         </button>
         {close === true ? (
-          <div className="bg-white h-[330px] absolute top-[71px] left-0 text-black rounded-b-md">
+          <div className="bg-white h-[330px] absolute top-[91px] right-0 text-black-not-strong rounded-b-md">
             <Link className="link-navbar" to="/dashboard">
               <AiTwotoneHome />
               Home
@@ -55,7 +55,7 @@ function Navbar() {
           </div>
         ) : null}
       </nav>
-      <nav className="flex items-center w-full sm:hidden text-white">
+      <nav className="flex items-center w-full sm:hidden text-semi-white">
         <Link className="link-navbar" to="/dashboard">
           <AiTwotoneHome />
           Home
