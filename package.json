@@ -1,0 +1,28 @@
+{
+  "name": "desafio-sharenergy-2023-01",
+  "version": "1.0.0",
+  "description": "Este Projeto tem como finalidade estruturar uma aplicação web fullstack, cujo objetivo seja possibilitar que usuários do banco consigam realizar transferências internas entre si",
+  "main": "index.js",
+  "scripts": {
+    "install:api": "cd ./backend && npm install",
+    "install:web": "cd ./frontend && npm install",
+    "install:all": "npm install && concurrently \"npm run install:api\" \"npm run install:web\"",
+    "start:web": "cd ./frontend && npm start",
+    "start:api": "cd ./backend && npm start",
+    "start": "concurrently \"npm run start:api\" \"npm run start:web\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thales-Daniel/desafio-sharenergy-2023-01.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thales-Daniel/desafio-sharenergy-2023-01/issues"
+  },
+  "homepage": "https://github.com/Thales-Daniel/desafio-sharenergy-2023-01#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

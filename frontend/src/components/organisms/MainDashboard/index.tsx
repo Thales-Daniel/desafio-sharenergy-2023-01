@@ -1,0 +1,81 @@
+import React, { useState } from "react"
+import { Pagination } from "@mui/material"
+import { AiOutlineSearch } from "react-icons/ai"
+
+import paginate from "../../../shared/utils/paginationFunc"
+import { FakeUsersTypes } from "../../../shared/types/usersFakeTypes"
+import FakeUsersCard from "../../molecules/FakeUsersCard"
+
+function MainDashboard({ data }: FakeUsersTypes) {
+  const [search, setSearch] = useState("")
+  const [inputValue, setInputValue] = useState("")
+  const [actualPage, setActualPage] = useState(1)
+
+  const handleSubmit = (event: React.FormEvent<EventTarget>) => {
+    event.preventDefault()
+
+    setSearch(inputValue)
+  }
+
+  const handleChange = (_event: React.ChangeEvent<unknown>, value: number) => {
+    setActualPage(value)
+  }
+
+  const width = window.innerWidth > 1200 ? 4 : 2
+
+  const pageFiltered = data?.results.filter((user) => {
+    const fullName = `${user.name.last} ${user.name.last}`.toLowerCase()
+    const email = user.email.toLowerCase().includes(search.toLocaleLowerCase())
+    const username = user.login.username
+      .toLowerCase()
+      .includes(search.toLocaleLowerCase())
+    const name = fullName.includes(search.toLocaleLowerCase())
+
+    if (email || username || name) return user
+  })
+
+  const pages = paginate(width, actualPage, pageFiltered)
+
+  let totalPages = 20
+
+  if (pageFiltered) {
+    totalPages =
+      pageFiltered?.length <= 4 ? 1 : Math.ceil(pageFiltered.length / 4)
+  }
+  return (
+    <main className="h-full flex flex-col items-center justify-around sm:w-full">
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="search" className="flex ">
+          <input
+            id="search"
+            name="search"
+            value={inputValue}
+            placeholder="Username, Name or Email"
+            type="text"
+            className="bg-semi-white border-border-gray border-r-0 border-2 rounded-l-md p-[5px] outline-0"
+            onChange={({ target }) => setInputValue(target.value)}
+          />
+          <button
+            type="submit"
+            className="bg-light-blue text-semi-white px-3 rounded-r-md"
+          >
+            <AiOutlineSearch className="text-[30px]" />
+          </button>
+        </label>
+      </form>
+      <div className="h-2/3 grid gap-y-5 gap-x-14 grid-cols-2  sm:w-full xl:flex xl:flex-col sm:justify-around ">
+        {pages?.map((user: any) => (
+          <FakeUsersCard user={user} key={user?.login.username} />
+        ))}
+      </div>
+      <Pagination
+        page={actualPage}
+        onChange={handleChange}
+        count={totalPages}
+        size="medium"
+      />
+    </main>
+  )
+}
+
+export default MainDashboard
